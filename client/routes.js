@@ -3,7 +3,7 @@ angular.module('dota2stats').config(function ($urlRouterProvider, $stateProvider
 
   $stateProvider
     .state('heroDetails', {
-      url: '/hero/:heroId',
+      url: '/hero/:heroID',
       template: '<hero-details></hero-details>'
     });
 

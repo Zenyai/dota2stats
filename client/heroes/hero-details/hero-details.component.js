@@ -8,7 +8,7 @@ angular.module('dota2stats').directive('heroDetails', function () {
 
       this.helpers({
         hero: () => {
-          return Heroes.findOne({_id: $stateParams.heroId});
+          return Heroes.findOne({heroID: parseInt($stateParams.heroID)});
         }
       });
 
