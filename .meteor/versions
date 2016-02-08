@@ -3,7 +3,6 @@ angular-meteor-data@0.1.0
 angular-templates@0.0.3
 angular:angular@1.4.8
 angularui:angular-ui-router@0.2.15
-artwells:queue@0.1.2
 autopublish@1.0.4
 autoupdate@1.2.4
 babel-compiler@5.8.24_1
@@ -42,7 +41,6 @@ lai:collection-extensions@0.1.4
 launch-screen@1.0.4
 livedata@1.0.15
 logging@1.0.8
-matb33:collection-hooks@0.7.15
 meteor@1.1.10
 meteor-base@1.0.1
 meteorhacks:async@1.0.0
@@ -69,7 +67,6 @@ session@1.1.1
 spacebars@1.0.7
 spacebars-compiler@1.0.7
 standard-minifiers@1.0.2
-templating@1.1.5
 templating-tools@1.0.0
 tracker@1.0.9
 twbs:bootstrap@3.3.6
