@@ -6,11 +6,12 @@ angular.module('dota2stats').directive('heroDetails', function () {
     controller: function ($scope, $stateParams, $reactive) {
       $reactive(this).attach($scope);
 
-      this.helpers({
-        hero: () => {
-          return Heroes.findOne({hero_id: parseInt($stateParams.heroID)});
-        }
-      });
+      this.hero = Heroes.findOne({hero_id: parseInt($stateParams.heroID)});
+
+      this.range_type = "Melee";
+      if(this.hero.herostat.Range > 128){
+        this.range_type = "Range";
+      }
 
     }
   };
