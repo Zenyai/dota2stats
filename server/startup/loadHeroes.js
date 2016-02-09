@@ -4,7 +4,6 @@ function getKeyByValue(object, value) {
   return Object.keys(object).find(key => object[key] === value);
 }
 
-
 Meteor.startup(function() {
   if (Heroes.find().count() === 0) {
     Heroes._ensureIndex({
@@ -29,6 +28,11 @@ Meteor.startup(function() {
                 for (var s in result) {
                   result[s].hero_id = result[s].id;
                   result[s].herostat_id = getKeyByValue(herostat,  result[s].localized_name);
+
+                  // this is fix for herostat windrunner name
+                  if(result[s].localized_name == "Windranger")
+                    result[s].herostat_id = getKeyByValue(herostat, "Windrunner");
+
                   result[s].herostat = fullstat[result[s].herostat_id];
                   delete(result[s].id);
                   Heroes.insert(result[s]);

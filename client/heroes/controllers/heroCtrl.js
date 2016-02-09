@@ -1,11 +1,11 @@
 angular.module('dota2stats').controller('heroCtrl', ['$scope', '$stateParams', '$reactive', function($scope, $stateParams, $reactive) {
   $reactive(this).attach($scope);
 
-  this.hero_id = parseInt($stateParams.heroID);
+  this.hero_name = $stateParams.hero_name;
 
   this.helpers({
      hero: () => {
-      return Heroes.findOne({hero_id: this.getReactively('hero_id')});
+      return Heroes.findOne({name: 'npc_dota_hero_' + this.getReactively('hero_name')});
     }
   });
 
