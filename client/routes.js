@@ -4,7 +4,8 @@ angular.module('dota2stats').config(function ($urlRouterProvider, $stateProvider
   $stateProvider
     .state('heroDetails', {
       url: '/hero/:heroID',
-      template: '<hero-details></hero-details>'
+      controller: 'heroCtrl as herodata',
+      templateUrl: 'client/heroes/templates/hero-details.html'
     });
 
   $urlRouterProvider.otherwise("/");

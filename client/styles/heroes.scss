@@ -1,0 +1,34 @@
+.top-image {
+  height: 400px;
+}
+
+#hero-name {
+  color: #FFF;
+  margin-bottom: 0px;
+}
+
+.main-body {
+  background-color: rgba(#070716, 1);
+  height: 100%;
+  color: #f1f1f1;
+  padding-top: 20px;
+}
+
+#hero-profile {
+  padding: 10px;
+  text-align: right;
+}
+
+#hero-profile img {
+  max-height: 150px;
+}
+
+.img-thumbnail-dark {
+  background-color: rgba(#595959, 0.42);
+  border: 0;
+}
+
+.ability-box > div {
+  padding: 20px;
+  text-align: center;
+}

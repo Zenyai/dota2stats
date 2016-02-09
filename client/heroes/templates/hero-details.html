@@ -1,0 +1,59 @@
+<div class="row top-image" back-img="images/topbg/dota2-jug.jpg">
+  <div class="col-sm-11 col-sm-offset-1">
+  </div>
+</div>
+
+<div class="row main-body">
+  <div class="col-md-8">
+    <div class="row">
+      <div class="col-md-4">
+        <div id="hero-profile">
+          <img src="http://cdn.dota2.com/apps/dota2/images/heroes/{{ herodata.hero.name | cut_npc_prefix }}_vert.jpg" class="img-thumbnail img-thumbnail-dark" />
+        </div>
+      </div>
+
+      <div class="col-md-8">
+        <h1 id="hero-name">{{ herodata.hero.localized_name }}</h1>
+        {{ herodata.range_type }}
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4 sidebar">
+    <div class="row ability-box">
+      <div class="col-md-4">
+        <img src="images/strength_icon.png" width="50px" height="50px" /><br/>
+        {{ herodata.hero.herostat.BaseStr }} + {{ herodata.hero.herostat.StrGain }}
+      </div>
+      <div class="col-md-4">
+        <img src="images/agility_icon.png" width="50px" height="50px" /><br/>
+        {{ herodata.hero.herostat.BaseAgi }} + {{ herodata.hero.herostat.AgiGain }}
+      </div>
+      <div class="col-md-4">
+        <img src="images/intelligence_icon.png" width="50px" height="50px" /><br/>
+        {{ herodata.hero.herostat.BaseInt }} + {{ herodata.hero.herostat.IntGain }}
+      </div>
+    </div>
+    <div class="table-responsive">
+      <table class="table">
+        <tr>
+          <td>Primary Stat</td>
+          <td>{{ herodata.primary_stat }}</td>
+        </tr>
+        <tr>
+          <td>Type</td>
+          <td>{{ herodata.range_type }}</td>
+        </tr>
+        <tr>
+          <td>Movement Speed</td>
+          <td>{{ herodata.hero.herostat.Movespeed }}</td>
+        </tr>
+        <tr>
+          <td>Attack Dmg</td>
+          <td>{{ herodata.hero.herostat.MinDmg }} - {{ herodata.hero.herostat.MaxDmg }}</td>
+        </tr>
+      </table>
+      <small>Data according to patch {{herodata.hero.herostat.Patch}}, retrieve from herostats.io</small>
+    </div>
+  </div>
+</div>
