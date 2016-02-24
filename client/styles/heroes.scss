@@ -1,33 +1,35 @@
 .top-image {
   height: 400px;
 }
-
 #hero-name {
+  font-size: 5em;
   color: #FFF;
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
-
-.main-body {
-  background-color: rgba(#070716, 1);
+.name-body {
+  margin-top: 100px;
+  margin-left: 40px;
+}
+.dark-card {
+  background-color: rgba(#1B1C1D, 1);
   height: 100%;
   color: #f1f1f1;
-  padding-top: 20px;
+  margin-top: 20px;
+  margin-right: 10px;
+  padding:20px;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px 0 rgba(168, 168, 168, 0.1);
 }
-
 #hero-profile {
   padding: 10px;
-  text-align: right;
+  text-align: center;
 }
-
 #hero-profile img {
   max-height: 150px;
 }
-
 .img-thumbnail-dark {
-  background-color: rgba(#595959, 0.42);
   border: 0;
 }
-
 .ability-box > div {
   padding: 20px;
   text-align: center;
