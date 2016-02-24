@@ -7,15 +7,15 @@
   margin-bottom: 0;
 }
 .name-body {
-  margin-top: 100px;
+  margin-top: 60px;
   margin-left: 40px;
+  margin-bottom: 30px;
 }
 .dark-card {
   background-color: rgba(#1B1C1D, 1);
   height: 100%;
   color: #f1f1f1;
   margin-top: 20px;
-  margin-right: 10px;
   padding:20px;
   border-radius: 5px;
   box-shadow: 0 5px 15px 0 rgba(168, 168, 168, 0.1);
@@ -33,4 +33,17 @@
 .ability-box > div {
   padding: 20px;
   text-align: center;
+}
+h2 {
+  color: white;
+  padding-bottom: 10px;
+}
+.bigtext {
+  font-size: 5em;
+  font-weight: 700;
+  color: white;
+}
+.smalltext {
+  color: white;
+  font-size: 1em;
 }

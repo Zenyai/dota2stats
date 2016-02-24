@@ -52,7 +52,32 @@
     </div>
   </div>
 
-  <div class="col-md-4 dark-card">
-    What sub
+  <div class="col-md-8">
+    <div class="row" style="padding-bottom: 20px;">
+      <div class="col-md-6 align-center">
+        <h2>Win / Lose Rate</h2>
+        <canvas id="doughnut" class="chart chart-doughnut"
+          chart-data="wl_data" chart-labels="wl_labels" chart-colours="wl_colour">
+        </canvas>
+      </div>
+
+      <div class="col-md-6 align-center">
+        <h2>Avg K/D Ratio</h2>
+        <p class="bigtext">{{herodata.analytics.kd_ratio.toFixed(2)}}</p>
+        <p class="smalltext">Kill: {{herodata.analytics.avg_kills.toFixed(2)}} <br/> Death: {{herodata.analytics.avg_deaths.toFixed(2)}} <br/> Assist: {{herodata.analytics.avg_assists.toFixed(2)}}</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 align-center">
+        <h2>Avg XPM</h2>
+        <p class="bigtext">{{herodata.analytics.avg_xp_per_min.toFixed(2)}}</p>
+      </div>
+
+      <div class="col-md-6 align-center">
+        <h2>Avg GPM</h2>
+        <p class="bigtext">{{herodata.analytics.avg_gold_per_min.toFixed(2)}}</p>
+      </div>
+    </div>
   </div>
 </div>

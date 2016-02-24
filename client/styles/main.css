@@ -20,3 +20,7 @@ html {
 .sidebar {
   padding: 20px;
 }
+
+.align-center {
+  text-align: center;
+}
