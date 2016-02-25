@@ -1,9 +1,25 @@
 <div class="row name-body">
-  <div class="col-md-12">
-    <h3>Hero Name</h3>
+  <div class="col-md-12 ">
+    <h3>Search Hero</h3>
     <form novalidate ng-submit="home.search()">
       <div angucomplete-alt id="search" placeholder="Type hero name here" maxlength="50" pause="100" selected-object="home.searchSelected" local-data="home.herosearch" search-fields="localized_name" title-field="localized_name" minlength="1" input-class="form-control form-control-small"
         match-class="highlight" input-changed="home.searchChanged" ></div>
     </form>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-4 align-center">
+    <h2>Match Recorded</h2>
+    <p class="bigtext">{{home.analytics.total_matches}}</p>
+    <p class="smalltext">{{home.start_date}} - {{home.end_date}}</p>
+  </div>
+  <div class="col-md-4 align-center">
+    <h2>Radiant Wins</h2>
+    <p class="bigtext">{{home.analytics.radiant_wins}}</p>
+  </div>
+  <div class="col-md-4 align-center">
+    <h2>Dire Wins</h2>
+    <p class="bigtext">{{home.analytics.dire_wins}}</p>
   </div>
 </div>

@@ -7,6 +7,18 @@ function($scope, $stateParams, $reactive, $location, $state) {
   this.helpers({
     herosearch: () => {
       return Heroes.find({}).fetch();
+    },
+    analytics: () => {
+      return Analytics.findOne({
+        type: "overall"
+      })
+    },
+  });
+
+  this.autorun(() => {
+    if(this.getReactively('analytics')){
+      this.start_date = moment(this.getReactively('analytics.first_match')).format('MMM Do YY');
+      this.end_date = moment(this.getReactively('analytics.latest_match')).format('MMM Do YY');
     }
   });
 
