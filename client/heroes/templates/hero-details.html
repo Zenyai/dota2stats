@@ -1,10 +1,18 @@
 <div class="row name-body">
   <div class="col-md-12">
-      <h1 id="hero-name">{{ herodata.hero.localized_name }}</h1>
+    <h3>Hero Name</h3>
+    <form novalidate ng-submit="herodata.search()">
+      <div angucomplete-alt id="search" placeholder="{{ herodata.placeholdertxt }}" maxlength="50" pause="100" selected-object="herodata.searchSelected" local-data="herodata.herosearch" search-fields="localized_name" title-field="localized_name" minlength="1" input-class="form-control form-control-small"
+        match-class="highlight" input-changed="herodata.searchChanged" ></div>
+    </form>
   </div>
 </div>
 
-<div class="row">
+<div class="row" ng-show="herodata.infotext">
+  <p class="info-big-text">{{herodata.infoval}}</p>
+</div>
+
+<div class="row" ng-show="herodata.showinfo">
   <div class="col-md-4 dark-card">
     <div class="row">
       <div class="col-md-12">
@@ -14,16 +22,16 @@
 
         <div class="row ability-box">
           <div class="col-md-4">
-            <img src="images/strength_icon.png" width="50px" height="50px" /><br/>
-            {{ herodata.hero.herostat.BaseStr }} + {{ herodata.hero.herostat.StrGain }}
+            <img src="images/strength_icon.png" width="50px" height="50px" />
+            <br/> {{ herodata.hero.herostat.BaseStr }} + {{ herodata.hero.herostat.StrGain }}
           </div>
           <div class="col-md-4">
-            <img src="images/agility_icon.png" width="50px" height="50px" /><br/>
-            {{ herodata.hero.herostat.BaseAgi }} + {{ herodata.hero.herostat.AgiGain }}
+            <img src="images/agility_icon.png" width="50px" height="50px" />
+            <br/> {{ herodata.hero.herostat.BaseAgi }} + {{ herodata.hero.herostat.AgiGain }}
           </div>
           <div class="col-md-4">
-            <img src="images/intelligence_icon.png" width="50px" height="50px" /><br/>
-            {{ herodata.hero.herostat.BaseInt }} + {{ herodata.hero.herostat.IntGain }}
+            <img src="images/intelligence_icon.png" width="50px" height="50px" />
+            <br/> {{ herodata.hero.herostat.BaseInt }} + {{ herodata.hero.herostat.IntGain }}
           </div>
         </div>
 
@@ -56,15 +64,16 @@
     <div class="row" style="padding-bottom: 20px;">
       <div class="col-md-6 align-center">
         <h2>Win / Lose Rate</h2>
-        <canvas id="doughnut" class="chart chart-doughnut"
-          chart-data="wl_data" chart-labels="wl_labels" chart-colours="wl_colour">
+        <canvas id="doughnut" class="chart chart-doughnut" chart-data="wl_data" chart-labels="wl_labels" chart-colours="wl_colour">
         </canvas>
       </div>
 
       <div class="col-md-6 align-center">
         <h2>Avg K/D Ratio</h2>
         <p class="bigtext">{{herodata.analytics.kd_ratio.toFixed(2)}}</p>
-        <p class="smalltext">Kill: {{herodata.analytics.avg_kills.toFixed(2)}} <br/> Death: {{herodata.analytics.avg_deaths.toFixed(2)}} <br/> Assist: {{herodata.analytics.avg_assists.toFixed(2)}}</p>
+        <p class="smalltext">Kill: {{herodata.analytics.avg_kills.toFixed(2)}}
+          <br/> Death: {{herodata.analytics.avg_deaths.toFixed(2)}}
+          <br/> Assist: {{herodata.analytics.avg_assists.toFixed(2)}}</p>
       </div>
     </div>
 
