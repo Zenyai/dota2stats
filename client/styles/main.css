@@ -24,3 +24,12 @@ html {
 .align-center {
   text-align: center;
 }
+
+.home-padd {
+  padding-top: 40px;
+}
+
+.searchbox {
+  padding-top: 30px;
+  padding-bottom: 50px;
+}
