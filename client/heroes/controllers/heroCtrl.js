@@ -5,6 +5,12 @@ function($scope, $stateParams, $reactive, $location) {
   var vs = this;
 
   this.hero_name = $location.search().name;
+  if(!this.hero_name){
+    vs.infoval = "This hero doesn't exist in our database"
+    vs.placeholdertxt = "Type hero name.."
+  } else {
+    vs.infoval = "Loading hero data.."
+  }
   this.hero_id = 0;
   this.showinfo = false;
   this.infotext = true;
@@ -66,7 +72,7 @@ function($scope, $stateParams, $reactive, $location) {
       return;
     }
 
-    if (!this.analytics)
+    if (!this.getReactively('analytics'))
       return;
 
     vs.firstload = true;
@@ -74,8 +80,8 @@ function($scope, $stateParams, $reactive, $location) {
     this.infotext = false;
 
     vs.hero_id = this.getReactively('hero.hero_id');
-    var wl_ratio = this.analytics.wl_ratio.toFixed(2);
-    vs.placeholdertxt = this.hero.localized_name;
+    var wl_ratio = this.getReactively('analytics').wl_ratio.toFixed(2);
+    vs.placeholdertxt = this.getReactively('hero').localized_name;
 
     $scope.wl_labels = ["Win", "Lose"];
     $scope.wl_data = [wl_ratio, 1 - wl_ratio];
