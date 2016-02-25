@@ -4,6 +4,20 @@ function($scope, $stateParams, $reactive, $location) {
 
   var vs = this;
 
+  this.changeHero = function(heroname){
+      vs.hero_name = heroname.replace(/ /g,"_").toLowerCase();
+      $scope.$broadcast('angucomplete-alt:clearInput');
+      //$location.path('/hero/' + vs.hero_name, false);
+      $location.search({'name': vs.hero_name})
+      vs.infoval = "This hero doesn't exist in our database"
+      vs.placeholdertxt = "Type hero name.."
+  }
+
+  if($stateParams.name){
+    console.log($stateParams.name)
+    this.changeHero($stateParams.name);
+  }
+
   this.hero_name = $location.search().name;
   if(!this.hero_name){
     vs.infoval = "This hero doesn't exist in our database"
@@ -41,15 +55,6 @@ function($scope, $stateParams, $reactive, $location) {
       return Heroes.find({}).fetch();
     }
   });
-
-  this.changeHero = function(heroname){
-      vs.hero_name = heroname.replace(/ /g,"_").toLowerCase();
-      $scope.$broadcast('angucomplete-alt:clearInput');
-      //$location.path('/hero/' + vs.hero_name, false);
-      $location.search({'name': vs.hero_name})
-      vs.infoval = "This hero doesn't exist in our database"
-      vs.placeholdertxt = "Type hero name.."
-  }
 
   this.searchSelected = function(selected) {
     if (selected) {
