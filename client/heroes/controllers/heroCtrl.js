@@ -66,14 +66,11 @@ function($scope, $stateParams, $reactive, $location) {
   };
 
   this.autorun(() => {
-    if (!this.getReactively('hero')){
+    if (!this.getReactively('hero') || !this.getReactively('analytics')){
       vs.showinfo = false;
       vs.infotext = true;
       return;
     }
-
-    if (!this.getReactively('analytics'))
-      return;
 
     vs.firstload = true;
     this.showinfo = true;
