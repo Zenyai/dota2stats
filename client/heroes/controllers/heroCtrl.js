@@ -4,25 +4,21 @@ function($scope, $stateParams, $reactive, $location) {
 
   var vs = this;
 
-  this.hero_name = $stateParams.hero_name;
+  this.hero_name = $location.search().name;
   this.hero_id = 0;
   this.showinfo = false;
   this.infotext = true;
-  this.infoval = "Loading hero data.."
-
-  var off = $scope.$on('$stateChangeStart', function(evt,  toState, toParams, fromState, fromParams) {
-   evt.preventDefault();
-   $state.params = toParams;
-   angular.copy($state.params, $stateParams);
-   off();
-  });
-  off();
 
   this.helpers({
     hero: () => {
       return Heroes.findOne({
         name: 'npc_dota_hero_' + this.getReactively('hero_name')
       });
+    },
+    hero_count: () => {
+      return Heroes.find({
+        name: 'npc_dota_hero_' + this.getReactively('hero_name')
+      }).count();
     },
     hero_matches: () => {
       return Matches.find({
@@ -42,7 +38,11 @@ function($scope, $stateParams, $reactive, $location) {
 
   this.changeHero = function(heroname){
       vs.hero_name = heroname.replace(/ /g,"_").toLowerCase();
-      $location.path('/hero/' + vs.hero_name).replace();
+      $scope.$broadcast('angucomplete-alt:clearInput');
+      //$location.path('/hero/' + vs.hero_name, false);
+      $location.search({'name': vs.hero_name})
+      vs.infoval = "This hero doesn't exist in our database"
+      vs.placeholdertxt = "Type hero name.."
   }
 
   this.searchSelected = function(selected) {
@@ -59,21 +59,17 @@ function($scope, $stateParams, $reactive, $location) {
     vs.changeHero(vs.searchField);
   };
 
-
   this.autorun(() => {
-    if (!this.hero){
+    if (!this.getReactively('hero')){
       vs.showinfo = false;
       vs.infotext = true;
-      if(vs.hero_id != undefined){
-        vs.infoval = "This hero doesn't exist in our database"
-        vs.placeholdertxt = "Type hero name.."
-      }
       return;
     }
 
     if (!this.analytics)
       return;
 
+    vs.firstload = true;
     this.showinfo = true;
     this.infotext = false;
 

@@ -3,7 +3,8 @@ angular.module('dota2stats').config(function ($urlRouterProvider, $stateProvider
 
   $stateProvider
     .state('heroDetails', {
-      url: '/hero/:hero_name',
+      url: '/hero/',
+      reloadOnSearch: false,
       controller: 'heroCtrl as herodata',
       templateUrl: 'client/heroes/templates/hero-details.html'
     });
