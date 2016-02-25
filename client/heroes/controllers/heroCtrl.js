@@ -2,12 +2,13 @@ angular.module('dota2stats').controller('heroCtrl', ['$scope', '$stateParams', '
 function($scope, $stateParams, $reactive, $location) {
   $reactive(this).attach($scope);
 
+  this.subscribe("hero");
+  this.subscribe("analytics");
   var vs = this;
 
   this.changeHero = function(heroname){
       vs.hero_name = heroname.replace(/ /g,"_").toLowerCase();
       $scope.$broadcast('angucomplete-alt:clearInput');
-      //$location.path('/hero/' + vs.hero_name, false);
       $location.search({'name': vs.hero_name})
       vs.infoval = "This hero doesn't exist in our database"
       vs.placeholdertxt = "Type hero name.."
@@ -33,16 +34,6 @@ function($scope, $stateParams, $reactive, $location) {
     hero: () => {
       return Heroes.findOne({
         name: 'npc_dota_hero_' + this.getReactively('hero_name')
-      });
-    },
-    hero_count: () => {
-      return Heroes.find({
-        name: 'npc_dota_hero_' + this.getReactively('hero_name')
-      }).count();
-    },
-    hero_matches: () => {
-      return Matches.find({
-        herolist: this.getReactively('hero_id')
       });
     },
     analytics: () => {

@@ -3,6 +3,8 @@ function($scope, $stateParams, $reactive, $location, $state) {
   $reactive(this).attach($scope);
 
   var vs = this;
+  this.subscribe("hero");
+  this.subscribe("analytics");
 
   this.helpers({
     herosearch: () => {
