@@ -2,7 +2,7 @@
   height: 400px;
 }
 .name-body {
-  margin-top: 50px;
+  margin-top: 15px;
   margin-bottom: 20px;
 }
 .dark-card {
@@ -10,7 +10,7 @@
   height: 100%;
   color: #f1f1f1;
   margin-top: 20px;
-  padding:20px;
+  padding: 20px;
   border-radius: 5px;
   box-shadow: 0 5px 15px 0 rgba(168, 168, 168, 0.1);
 }
@@ -42,12 +42,23 @@ h2 {
   font-size: 1em;
 }
 h3 {
-  color:white;
-  margin-bottom: 0px;
+  color: white;
+  margin-bottom: 0;
 }
 .info-big-text {
   color: #FFF;
-  text-align:center;
+  text-align: center;
   font-size: 5em;
   padding-top: 50px;
+}
+.home-icon {
+  padding-top: 40px;
+  color: #FFF;
+  font-size: 2em;
+}
+.home-icon > a {
+  color: #CCC;
+}
+.home-icon > a:hover {
+  color: #FFF;
 }

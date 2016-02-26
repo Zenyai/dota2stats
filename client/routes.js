@@ -1,4 +1,4 @@
-angular.module('dota2stats').config(function ($urlRouterProvider, $stateProvider, $locationProvider) {
+angular.module('dota2stats').config(function($urlRouterProvider, $stateProvider, $locationProvider) {
   $locationProvider.html5Mode(true);
 
   $stateProvider

@@ -1,14 +1,11 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300,700);
-
 body {
   background-color: transparent;
   font-family: 'Roboto', sans-serif;
 }
-
 .navbar {
-  background: rgba(0,0,0,0.4);
+  background: rgba(0, 0, 0, 0.4);
 }
-
 html {
   background: url(images/background.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -16,20 +13,25 @@ html {
   -o-background-size: cover;
   background-size: cover;
 }
-
 .sidebar {
   padding: 20px;
 }
-
 .align-center {
   text-align: center;
 }
-
 .home-padd {
   padding-top: 40px;
 }
-
 .searchbox {
   padding-top: 30px;
   padding-bottom: 50px;
+}
+.footer {
+  height: 150px;
+  color: #CCC;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  vertical-align: bottom;
+  padding: 25px;
 }

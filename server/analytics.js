@@ -1,3 +1,3 @@
-Meteor.publish("analytics", function () {
+Meteor.publish("analytics", function() {
   return Analytics.find({});
 });

@@ -1,9 +1,15 @@
+<div class="row">
+  <div class="col-md-2 col-md-offset-10 home-icon">
+    <a ui-sref="home"><i class="glyphicon glyphicon-home"></i></a>
+  </div>
+</div>
+
 <div class="row name-body">
   <div class="col-md-12">
     <h3>Hero Name</h3>
     <form novalidate ng-submit="herodata.search()">
-      <div angucomplete-alt id="search" placeholder="{{ herodata.placeholdertxt }}" maxlength="50" pause="100" selected-object="herodata.searchSelected" local-data="herodata.herosearch" search-fields="localized_name" title-field="localized_name" minlength="1" input-class="form-control form-control-small"
-        match-class="highlight" input-changed="herodata.searchChanged" ></div>
+      <div angucomplete-alt id="search" placeholder="{{ herodata.placeholdertxt }}" maxlength="50" pause="100" selected-object="herodata.searchSelected" local-data="herodata.herosearch" search-fields="localized_name" title-field="localized_name" minlength="1"
+        input-class="form-control form-control-small" match-class="highlight" input-changed="herodata.searchChanged"></div>
     </form>
   </div>
 </div>

@@ -10,15 +10,15 @@ Meteor.startup(function() {
       "hero_id": 1
     });
 
-    HTTP.call( 'GET', 'http://api.herostats.io/heroes/all', {}, function( err1, res1 ) {
-      if( err1 ){
+    HTTP.call('GET', 'http://api.herostats.io/heroes/all', {}, function(err1, res1) {
+      if (err1) {
         console.log(err1);
-      } else{
+      } else {
         var fullstat = JSON.parse(res1.content);
 
-        HTTP.call( 'GET', 'http://api.herostats.io/heroes', {}, function( err2, res2 ) {
-          if ( err2 ) {
-            console.log( err2 );
+        HTTP.call('GET', 'http://api.herostats.io/heroes', {}, function(err2, res2) {
+          if (err2) {
+            console.log(err2);
           } else {
             var herostat = JSON.parse(res2.content);
 
@@ -27,10 +27,10 @@ Meteor.startup(function() {
                 var result = res3.heroes;
                 for (var s in result) {
                   result[s].hero_id = result[s].id;
-                  result[s].herostat_id = getKeyByValue(herostat,  result[s].localized_name);
+                  result[s].herostat_id = getKeyByValue(herostat, result[s].localized_name);
 
                   // this is fix for herostat windrunner name
-                  if(result[s].localized_name == "Windranger")
+                  if (result[s].localized_name == "Windranger")
                     result[s].herostat_id = getKeyByValue(herostat, "Windrunner");
 
                   result[s].herostat = fullstat[result[s].herostat_id];
