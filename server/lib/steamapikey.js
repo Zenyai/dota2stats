@@ -1,1 +1,2 @@
-apikey = 'B35C11B6CF08F97284627A12CE03DAD6';
+apikey = process.env.STEAMAPIKEY
+console.log(apikey)
