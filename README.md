@@ -18,3 +18,7 @@ After setting environment variable you should be able to go to the project folde
 
 ## Notes
 Your site will be up and running but you still need two workers to download the data from DotA API which are listed below
+
+[dota2stats-download-bot](https://github.com/zenyai/dota2stats-download-bot)
+
+[dota2stats-interpret-bot](https://github.com/zenyai/dota2stats-interpret-bot)
